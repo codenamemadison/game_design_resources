@@ -8,10 +8,30 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "Machine",
+"language": "GDScript",
+"path": "res://scripts/machine.gd"
+}, {
+"base": "Node",
+"class": "Market",
+"language": "GDScript",
+"path": "res://scripts/market.gd"
+} ]
+_global_script_class_icons={
+"Machine": "",
+"Market": ""
+}
+
 [application]
 
 config/name="week4"
 config/icon="res://icon.png"
+
+[autoload]
+
+global="*res://scripts/globals.gd"
 
 [gui]
 

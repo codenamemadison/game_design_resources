@@ -1,0 +1,50 @@
+{
+	"weapons": {
+		"Wood Sword": 10,
+		"Iron Sword": 50,
+		"Rapier": 100,
+		"Cutlass": 200,
+		"Sai": 150,
+		"Axe": 175,
+		"Executioner's Axe": 500,
+		"Lucille": 350,
+		"Mace": 250
+	},
+	"potions": {
+		"Fire Potion": 100,
+		"Water Potion": 100,
+		"Acid Potion": 100
+	},
+	"cloaks": {
+		"Apprentice Cloak": 100,
+		"Master Cloak": 200,
+		"Wizard Cloak": 300
+	},
+	"armor": {
+		"helmets": {
+			"Green Cap": 10,
+			"Leather Barbute Helm": 50,
+			"Iron Barbute Helm": 100,
+			"Great Helm": 200
+		},
+		"chestplate": {
+			"Leather Chestplate": 50,
+			"Iron Chestplate": 225,
+			"Reinforced Iron Chestplate": 375,
+			"Steel Chestplate": 500
+		},
+		"gloves": {
+			"Leather gloves": 75,
+			"Iron gloves": 275
+		},
+		"leggings": {
+			"Boxers": 20,
+			"Leather pants": 80,
+			"Heavy Trousers": 150
+		},
+		"boots": {
+			"Leather boots": 30,
+			"Iron boots": 150
+		}
+	}
+}
