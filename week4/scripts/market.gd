@@ -31,4 +31,4 @@ func purchase_item(category, item):
 	Customer buys an item from the store
 	"""
 	
-	global.balance += store[category][item]
+	global.BALANCE += store[category][item]

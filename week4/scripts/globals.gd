@@ -14,4 +14,5 @@ Project > Project Setting > Autoload
 extends Node
 
 # Player's balance
-var balance
+var BALANCE
+var MAX_MACHINE_LEVEL = 0
