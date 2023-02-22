@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile068.png-6ab77c758511b578ca27da0c33829336.stex"
+path="res://.import/circle_temp.png-5bb083a0a12868e74e072fb9b50b8e9e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fantasy icons - cropped/tile068.png"
-dest_files=[ "res://.import/tile068.png-6ab77c758511b578ca27da0c33829336.stex" ]
+source_file="res://assets/temp assets/circle_temp.png"
+dest_files=[ "res://.import/circle_temp.png-5bb083a0a12868e74e072fb9b50b8e9e.stex" ]
 
 [params]
 

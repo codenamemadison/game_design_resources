@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/progress_bar_background.png" type="Texture" id=1]
 [ext_resource path="res://assets/Background Sprites/Sprites/7-Objects/2-Door/1-Closed/1.png" type="Texture" id=2]
@@ -14,7 +14,15 @@
 [ext_resource path="res://assets/money and gems - cropped/tile000.png" type="Texture" id=12]
 [ext_resource path="res://assets/money and gems - cropped/tile001.png" type="Texture" id=13]
 [ext_resource path="res://assets/fantasy icons - cropped/tile069.png" type="Texture" id=14]
-[ext_resource path="res://assets/fantasy icons - cropped/tile313.png" type="Texture" id=15]
+[ext_resource path="res://assets/fantasy icons - cropped/tile068.png" type="Texture" id=15]
+[ext_resource path="res://assets/temp assets/machine_temp.png" type="Texture" id=16]
+[ext_resource path="res://assets/temp assets/circle_temp.png" type="Texture" id=17]
+[ext_resource path="res://assets/fantasy icons - cropped/tile113.png" type="Texture" id=18]
+[ext_resource path="res://assets/fantasy icons - cropped/tile081.png" type="Texture" id=19]
+[ext_resource path="res://assets/fantasy icons - cropped/tile119.png" type="Texture" id=20]
+[ext_resource path="res://assets/fantasy icons - cropped/tile126.png" type="Texture" id=21]
+[ext_resource path="res://assets/fantasy icons - cropped/tile100.png" type="Texture" id=22]
+[ext_resource path="res://assets/fantasy icons - cropped/tile146.png" type="Texture" id=23]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Tile-Sets (64-64).png 0"
@@ -375,46 +383,284 @@ position = Vector2( 925.094, 63.9062 )
 scale = Vector2( 2.99414, 2.99414 )
 texture = ExtResource( 14 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="machines" type="VBoxContainer" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="machine" type="Sprite" parent="VBoxContainer"]
-position = Vector2( 164, 308 )
-scale = Vector2( 3.5, 3.5 )
+[node name="top row" type="HBoxContainer" parent="machines"]
+margin_right = 40.0
+
+[node name="machine1" type="Sprite" parent="machines/top row"]
+position = Vector2( 191, 304.5 )
+scale = Vector2( 13, 13 )
+texture = ExtResource( 16 )
+
+[node name="inventory1" type="Sprite" parent="machines/top row/machine1"]
+position = Vector2( -6.73076, -4.47957 )
+scale = Vector2( 0.151725, 0.151725 )
+texture = ExtResource( 17 )
+
+[node name="inv num1" type="Label" parent="machines/top row/machine1/inventory1"]
+margin_left = -3.04194
+margin_top = -3.54893
+margin_right = 4.95806
+margin_bottom = 10.4511
+rect_scale = Vector2( 0.7, 0.7 )
+text = "0"
+
+[node name="upgrade1" type="Sprite" parent="machines/top row/machine1"]
+position = Vector2( -6.80769, -2.01803 )
+scale = Vector2( 0.117788, 0.117788 )
 texture = ExtResource( 15 )
 
-[node name="machine2" type="Sprite" parent="VBoxContainer"]
-position = Vector2( 166, 430 )
-scale = Vector2( 3.5, 3.5 )
+[node name="helmet icon" type="Sprite" parent="machines/top row/machine1"]
+position = Vector2( -2.69231, -0.846153 )
+scale = Vector2( 0.137326, 0.131152 )
+texture = ExtResource( 18 )
+
+[node name="Label" type="Label" parent="machines/top row/machine1"]
+anchor_top = 0.01
+anchor_right = 0.055
+anchor_bottom = 0.087
+margin_left = -0.0769196
+margin_top = -2.53846
+margin_right = 47.9231
+margin_bottom = 28.4615
+rect_scale = Vector2( 0.09, 0.09 )
+text = "Helmet
+Armor"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="machine2" type="Sprite" parent="machines/top row"]
+position = Vector2( 403, 302.5 )
+scale = Vector2( 13, 13 )
+texture = ExtResource( 16 )
+
+[node name="inventory2" type="Sprite" parent="machines/top row/machine2"]
+position = Vector2( -6.73076, -4.47957 )
+scale = Vector2( 0.151725, 0.151725 )
+texture = ExtResource( 17 )
+
+[node name="inv num2" type="Label" parent="machines/top row/machine2/inventory2"]
+margin_left = -3.04194
+margin_top = -3.54893
+margin_right = 4.95806
+margin_bottom = 10.4511
+rect_scale = Vector2( 0.7, 0.7 )
+text = "0"
+
+[node name="upgrade2" type="Sprite" parent="machines/top row/machine2"]
+position = Vector2( -6.80769, -2.01803 )
+scale = Vector2( 0.117788, 0.117788 )
 texture = ExtResource( 15 )
 
-[node name="machine3" type="Sprite" parent="VBoxContainer"]
-position = Vector2( 298, 308 )
-scale = Vector2( 3.5, 3.5 )
+[node name="chest icon" type="Sprite" parent="machines/top row/machine2"]
+position = Vector2( -2.69231, -0.846153 )
+scale = Vector2( 0.137326, 0.131152 )
+texture = ExtResource( 20 )
+
+[node name="itemlabel2" type="Label" parent="machines/top row/machine2"]
+anchor_top = 0.01
+anchor_right = 0.055
+anchor_bottom = 0.087
+margin_left = -0.0769196
+margin_top = -2.53846
+margin_right = 47.9231
+margin_bottom = 28.4615
+rect_scale = Vector2( 0.09, 0.09 )
+text = "Chest
+Armor"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="machine3" type="Sprite" parent="machines/top row"]
+position = Vector2( 614, 304.5 )
+scale = Vector2( 13, 13 )
+texture = ExtResource( 16 )
+
+[node name="inventory3" type="Sprite" parent="machines/top row/machine3"]
+position = Vector2( -6.73076, -4.47957 )
+scale = Vector2( 0.151725, 0.151725 )
+texture = ExtResource( 17 )
+
+[node name="inv num3" type="Label" parent="machines/top row/machine3/inventory3"]
+margin_left = -3.04194
+margin_top = -3.54893
+margin_right = 4.95806
+margin_bottom = 10.4511
+rect_scale = Vector2( 0.7, 0.7 )
+text = "0"
+
+[node name="upgrade3" type="Sprite" parent="machines/top row/machine3"]
+position = Vector2( -6.80769, -2.01803 )
+scale = Vector2( 0.117788, 0.117788 )
 texture = ExtResource( 15 )
 
-[node name="machine4" type="Sprite" parent="VBoxContainer"]
-position = Vector2( 299, 430 )
-scale = Vector2( 3.5, 3.5 )
+[node name="sword icon" type="Sprite" parent="machines/top row/machine3"]
+position = Vector2( -2.69231, -0.846153 )
+scale = Vector2( 0.137326, 0.131152 )
+texture = ExtResource( 19 )
+
+[node name="itemlabel3" type="Label" parent="machines/top row/machine3"]
+anchor_top = 0.01
+anchor_right = 0.055
+anchor_bottom = 0.087
+margin_left = -0.0769196
+margin_top = -2.53846
+margin_right = 47.9231
+margin_bottom = 28.4615
+rect_scale = Vector2( 0.09, 0.09 )
+text = "Classic
+Sword"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="bottom row" type="HBoxContainer" parent="machines"]
+margin_top = 4.0
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="machine4" type="Sprite" parent="machines/bottom row"]
+position = Vector2( 190, 431.5 )
+scale = Vector2( 13, 13 )
+texture = ExtResource( 16 )
+
+[node name="inventory4" type="Sprite" parent="machines/bottom row/machine4"]
+position = Vector2( -6.73076, -4.47957 )
+scale = Vector2( 0.151725, 0.151725 )
+texture = ExtResource( 17 )
+
+[node name="inv num4" type="Label" parent="machines/bottom row/machine4/inventory4"]
+margin_left = -3.04194
+margin_top = -3.54893
+margin_right = 4.95806
+margin_bottom = 10.4511
+rect_scale = Vector2( 0.7, 0.7 )
+text = "0"
+
+[node name="upgrade4" type="Sprite" parent="machines/bottom row/machine4"]
+position = Vector2( -6.80769, -2.01803 )
+scale = Vector2( 0.117788, 0.117788 )
 texture = ExtResource( 15 )
 
-[node name="machine5" type="Sprite" parent="VBoxContainer"]
-position = Vector2( 438, 308 )
-scale = Vector2( 3.5, 3.5 )
+[node name="cloak icon" type="Sprite" parent="machines/bottom row/machine4"]
+position = Vector2( -2.69231, -0.846153 )
+scale = Vector2( 0.137326, 0.131152 )
+texture = ExtResource( 21 )
+
+[node name="itemlabel4" type="Label" parent="machines/bottom row/machine4"]
+anchor_top = 0.01
+anchor_right = 0.055
+anchor_bottom = 0.087
+margin_left = -0.0769196
+margin_top = -2.53846
+margin_right = 47.9231
+margin_bottom = 28.4615
+rect_scale = Vector2( 0.09, 0.09 )
+text = "Magic
+Cloak"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="machine5" type="Sprite" parent="machines/bottom row"]
+position = Vector2( 402, 429.5 )
+scale = Vector2( 13, 13 )
+texture = ExtResource( 16 )
+
+[node name="inventory5" type="Sprite" parent="machines/bottom row/machine5"]
+position = Vector2( -6.73076, -4.47957 )
+scale = Vector2( 0.151725, 0.151725 )
+texture = ExtResource( 17 )
+
+[node name="inv num5" type="Label" parent="machines/bottom row/machine5/inventory5"]
+margin_left = -3.04194
+margin_top = -3.54893
+margin_right = 4.95806
+margin_bottom = 10.4511
+rect_scale = Vector2( 0.7, 0.7 )
+text = "0"
+
+[node name="upgrade5" type="Sprite" parent="machines/bottom row/machine5"]
+position = Vector2( -6.80769, -2.01803 )
+scale = Vector2( 0.117788, 0.117788 )
 texture = ExtResource( 15 )
 
-[node name="machine6" type="Sprite" parent="VBoxContainer"]
-position = Vector2( 439, 430 )
-scale = Vector2( 3.5, 3.5 )
+[node name="potion icon" type="Sprite" parent="machines/bottom row/machine5"]
+position = Vector2( -2.69231, -0.846153 )
+scale = Vector2( 0.137326, 0.131152 )
+texture = ExtResource( 23 )
+
+[node name="itemlabel5" type="Label" parent="machines/bottom row/machine5"]
+anchor_top = 0.01
+anchor_right = 0.055
+anchor_bottom = 0.087
+margin_left = -0.0769196
+margin_top = -2.53846
+margin_right = 47.9231
+margin_bottom = 28.4615
+rect_scale = Vector2( 0.09, 0.09 )
+text = "Mystery
+Potion"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="machine6" type="Sprite" parent="machines/bottom row"]
+position = Vector2( 613, 431.5 )
+scale = Vector2( 13, 13 )
+texture = ExtResource( 16 )
+
+[node name="inventory6" type="Sprite" parent="machines/bottom row/machine6"]
+position = Vector2( -6.73076, -4.47957 )
+scale = Vector2( 0.151725, 0.151725 )
+texture = ExtResource( 17 )
+
+[node name="inv num6" type="Label" parent="machines/bottom row/machine6/inventory6"]
+margin_left = -3.04194
+margin_top = -3.54893
+margin_right = 4.95806
+margin_bottom = 10.4511
+rect_scale = Vector2( 0.7, 0.7 )
+text = "0"
+
+[node name="upgrade6" type="Sprite" parent="machines/bottom row/machine6"]
+position = Vector2( -6.80769, -2.01803 )
+scale = Vector2( 0.117788, 0.117788 )
 texture = ExtResource( 15 )
 
-[node name="machine7" type="Sprite" parent="VBoxContainer"]
-position = Vector2( 577, 307 )
-scale = Vector2( 3.5, 3.5 )
-texture = ExtResource( 15 )
+[node name="helmet icon" type="Sprite" parent="machines/bottom row/machine6"]
+position = Vector2( -2.69231, -0.846153 )
+scale = Vector2( 0.137326, 0.131152 )
+texture = ExtResource( 22 )
 
-[node name="machine8" type="Sprite" parent="VBoxContainer"]
-position = Vector2( 578, 429 )
-scale = Vector2( 3.5, 3.5 )
-texture = ExtResource( 15 )
+[node name="itemlabel6" type="Label" parent="machines/bottom row/machine6"]
+anchor_top = 0.01
+anchor_right = 0.055
+anchor_bottom = 0.087
+margin_left = -0.0769196
+margin_top = -2.53846
+margin_right = 47.9231
+margin_bottom = 28.4615
+rect_scale = Vector2( 0.09, 0.09 )
+text = "Wooden
+Crossbow"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
