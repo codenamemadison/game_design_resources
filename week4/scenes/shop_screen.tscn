@@ -929,7 +929,6 @@ text = "You do not have enough money
 valign = 1
 
 [node name="upgrade pop up" type="PopupPanel" parent="."]
-visible = true
 margin_left = 317.0
 margin_top = 282.0
 margin_right = 710.0
