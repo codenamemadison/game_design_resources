@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/progress_bar_background.png" type="Texture" id=1]
 [ext_resource path="res://assets/Background Sprites/Sprites/7-Objects/2-Door/1-Closed/1.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://assets/fantasy icons - cropped/tile126.png" type="Texture" id=21]
 [ext_resource path="res://assets/fantasy icons - cropped/tile100.png" type="Texture" id=22]
 [ext_resource path="res://assets/fantasy icons - cropped/tile146.png" type="Texture" id=23]
+[ext_resource path="res://assets/fantasy icons - cropped/tile038.png" type="Texture" id=24]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Tile-Sets (64-64).png 0"
@@ -418,7 +419,7 @@ position = Vector2( -2.69231, -0.846153 )
 scale = Vector2( 0.137326, 0.131152 )
 texture = ExtResource( 18 )
 
-[node name="Label" type="Label" parent="machines/top row/machine1"]
+[node name="item label1" type="Label" parent="machines/top row/machine1"]
 anchor_top = 0.01
 anchor_right = 0.055
 anchor_bottom = 0.087
@@ -434,6 +435,11 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="machine status1" type="Sprite" parent="machines/top row/machine1"]
+position = Vector2( 6.07692, -4.03845 )
+scale = Vector2( 0.100962, 0.100962 )
+texture = ExtResource( 24 )
 
 [node name="machine2" type="Sprite" parent="machines/top row"]
 position = Vector2( 403, 302.5 )
@@ -480,6 +486,11 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="machine status2" type="Sprite" parent="machines/top row/machine2"]
+position = Vector2( 6.30769, -3.96153 )
+scale = Vector2( 0.100962, 0.100962 )
+texture = ExtResource( 24 )
+
 [node name="machine3" type="Sprite" parent="machines/top row"]
 position = Vector2( 614, 304.5 )
 scale = Vector2( 13, 13 )
@@ -524,6 +535,11 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="machine status3" type="Sprite" parent="machines/top row/machine3"]
+position = Vector2( 6.46155, -4.11537 )
+scale = Vector2( 0.100962, 0.100962 )
+texture = ExtResource( 24 )
 
 [node name="bottom row" type="HBoxContainer" parent="machines"]
 margin_top = 4.0
@@ -575,6 +591,11 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="machine status4" type="Sprite" parent="machines/bottom row/machine4"]
+position = Vector2( 6.30768, -3.88463 )
+scale = Vector2( 0.100962, 0.100962 )
+texture = ExtResource( 24 )
+
 [node name="machine5" type="Sprite" parent="machines/bottom row"]
 position = Vector2( 402, 429.5 )
 scale = Vector2( 13, 13 )
@@ -620,6 +641,11 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="machine status5" type="Sprite" parent="machines/bottom row/machine5"]
+position = Vector2( 6.23077, -3.96155 )
+scale = Vector2( 0.100962, 0.100962 )
+texture = ExtResource( 24 )
+
 [node name="machine6" type="Sprite" parent="machines/bottom row"]
 position = Vector2( 613, 431.5 )
 scale = Vector2( 13, 13 )
@@ -664,3 +690,8 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="machine status6" type="Sprite" parent="machines/bottom row/machine6"]
+position = Vector2( 6.46155, -3.57692 )
+scale = Vector2( 0.100962, 0.100962 )
+texture = ExtResource( 24 )
