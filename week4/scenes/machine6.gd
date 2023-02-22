@@ -13,6 +13,7 @@ var itemNum = 0
 var item_progress = 0
 var item_rate = 10
 var item_goal = 100
+var changeCurrency = false
 
 # Machine is broken
 var fix_progress = 0
@@ -41,8 +42,20 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if machine_process == "build":
+	var newBalance = global.DIAMONDS - itemCost
+	
+	if machine_process == "build" and newBalance >= 0:
+		#get_node('/root/Main/build pop up/pop up content/pop up text/warning').visible = false
+		if changeCurrency:
+			global.DIAMONDS -= itemCost
+			get_node("/root/Main/currencies/currency stats/diamond stats/").text = str(global.DIAMONDS)
+			changeCurrency= false
 		workOnJob(delta)
+	elif machine_process == "build":
+		#get_node('/root/Main/build pop up/pop up content/pop up text/warning').visible = true
+		machine_process = "Stationary"
+		$"machine status6".texture = null
+		elasped_time = 0
 	updateLevelStats(delta)
 	#workOnJob(delta)
 	#chanceToBreakMachine()
@@ -86,22 +99,19 @@ func workOnJob(delta):
 		$"machine status6".texture = load("res://assets/machine status icons/machine_building.png")
 		
 	if isJobFinished():
-		if broken:
-			fix_progress = 0
-		else:
-			item_progress = 0
-			itemNum += 1
-			$"inventory6/inv num6".text = str(itemNum)
-			machine_process = "Stationary"
-			$"machine status6".texture = null
+		item_progress = 0
+		itemNum += 1
+		# update inventory stats
+		$"inventory6/inv num6".text = str(itemNum)
+		global.NUM_OF_CROSSBOWS = itemNum
+		
+		machine_process = "Stationary"
+		$"machine status6".texture = null
 		elasped_time = 0
 	else:
 		elasped_time += delta
 		if elasped_time >= 1:
-			if broken:
-				fix_progress += fix_rate
-			else:
-				item_progress += item_rate
+			item_progress += item_rate
 			elasped_time = 0
 	$ProgressBar6.value = item_progress
 
