@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile014.png-16159e818826d9da115b01d810965a35.stex"
+path="res://.import/Terrain (32x32).png-2f758bd4b6ffca6ecda097b783601ac4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/money and gems - cropped/tile014.png"
-dest_files=[ "res://.import/tile014.png-16159e818826d9da115b01d810965a35.stex" ]
+source_file="res://assets/Terrain/Terrain (32x32).png"
+dest_files=[ "res://.import/Terrain (32x32).png-2f758bd4b6ffca6ecda097b783601ac4.stex" ]
 
 [params]
 

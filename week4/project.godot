@@ -33,7 +33,6 @@ _global_script_class_icons={
 [application]
 
 config/name="week4"
-run/main_scene="res://scenes/shop_screen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
