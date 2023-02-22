@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "Customer",
+"language": "GDScript",
+"path": "res://scripts/customer.gd"
+}, {
+"base": "Node",
+"class": "InventoryManager",
+"language": "GDScript",
+"path": "res://scripts/inventory.gd"
+}, {
 "base": "Sprite",
 "class": "Machinee",
 "language": "GDScript",
@@ -20,6 +30,8 @@ _global_script_classes=[ {
 "path": "res://scripts/market.gd"
 } ]
 _global_script_class_icons={
+"Customer": "",
+"InventoryManager": "",
 "Machinee": "",
 "Market": ""
 }
@@ -27,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="week4"
-run/main_scene="res://scenes/MachineSprite.tscn"
+run/main_scene="res://scenes/shop_screen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
