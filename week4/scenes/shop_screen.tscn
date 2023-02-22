@@ -973,8 +973,6 @@ scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 47 )
 
 [node name="new rate" type="Label" parent="upgrade pop up/pop up content/pop up text/rate info"]
-anchor_left = 0.307
-anchor_right = 0.317
 margin_left = 46.0
 margin_right = 88.0
 margin_bottom = 14.0

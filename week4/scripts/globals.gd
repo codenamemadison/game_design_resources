@@ -14,10 +14,10 @@ Project > Project Setting > Autoload
 extends Node
 
 # Player's balance
-var COINS
-var EMERALDS
-var RUBY
-var DIAMONDS
+var COINS = 0
+var EMERALDS = 0 
+var RUBY = 0
+var DIAMONDS = 0
 
 # Market Inventory
 var NUM_OF_CHEST 
@@ -33,8 +33,8 @@ var STORE
 # Upgrade Machine Rates
 var level1rate =  20
 var level12upgradecost = 50
-var level2rate = 15
-var level23upgradecost = 50
-var level3rate = 10
-var level34upgradecost = 50
-var level4rate = 5
+var level2rate = 12
+var level23upgradecost = 100
+var level3rate = 7
+var level34upgradecost = 150
+var level4rate = 2

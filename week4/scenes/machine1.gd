@@ -4,7 +4,6 @@ extends Sprite
 var level = 1
 var upgradeCost = 100
 
-
 # important info
 var itemCost = 20
 var machine_process = "Stationary"
@@ -14,7 +13,6 @@ var itemNum = 0
 var item_progress = 0
 var item_rate = 10
 var item_goal = 100
-var changeCurrency = false
 
 # Machine is broken
 var fix_progress = 0
@@ -31,6 +29,7 @@ var duration_to_complete_item = 0
 var duration_to_complete_fixing = 0
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("/root/Main/machines/top row/fix1/").visible = false
@@ -38,12 +37,6 @@ func _ready():
 	$"inventory1/inv num1".text = "0"
 	$ProgressBar1.value = 0
 	level = 1
-	global.EMERALDS = 100 # TESTING
-	global.RUBY= 100 # TESTING
-	global.DIAMONDS = 100 # TESTING
-	get_node("/root/Main/currencies/currency stats/emerald stats/").text = str(global.EMERALDS)
-	get_node("/root/Main/currencies/currency stats/ruby stats/").text = str(global.RUBY)
-	get_node("/root/Main/currencies/currency stats/diamond stats/").text = str(global.DIAMONDS)
 	
 
 	pass # Replace with function body.
@@ -51,19 +44,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var newBalance = global.EMERALDS - itemCost
-	if machine_process == "build" and newBalance >= 0:
-		#get_node('/root/Main/build pop up/pop up content/pop up text/warning').visible = false
-		if changeCurrency:
-			global.EMERALDS -= itemCost
-			get_node("/root/Main/currencies/currency stats/emerald stats/").text = str(global.EMERALDS)
-			changeCurrency= false
+	if machine_process == "build":
 		workOnJob(delta)
-	elif machine_process == "build":
-		#get_node('/root/Main/build pop up/pop up content/pop up text/warning').visible = true
-		machine_process = "Stationary"
-		$"machine status1".texture = null
-		elasped_time = 0
 	updateLevelStats(delta)
 	#workOnJob(delta)
 	#chanceToBreakMachine()
@@ -87,7 +69,8 @@ func updateLevelStats(delta):
 		item_rate = global.level3rate
 	elif level == 4:
 		item_rate = global.level4rate
-
+		
+		
 
 
 
@@ -107,19 +90,22 @@ func workOnJob(delta):
 		$"machine status1".texture = load("res://assets/machine status icons/machine_building.png")
 		
 	if isJobFinished():
-		item_progress = 0
-		itemNum += 1
-		# update inventory stats
-		$"inventory1/inv num1".text = str(itemNum)
-		global.NUM_OF_HELMET = itemNum
-		
-		machine_process = "Stationary"
-		$"machine status1".texture = null
+		if broken:
+			fix_progress = 0
+		else:
+			item_progress = 0
+			itemNum += 1
+			$"inventory1/inv num1".text = str(itemNum)
+			machine_process = "Stationary"
+			$"machine status1".texture = null
 		elasped_time = 0
 	else:
 		elasped_time += delta
 		if elasped_time >= 1:
-			item_progress += item_rate
+			if broken:
+				fix_progress += fix_rate
+			else:
+				item_progress += item_rate
 			elasped_time = 0
 	$ProgressBar1.value = item_progress
 
@@ -127,7 +113,7 @@ func isJobFinished():
 	"""
 	Returns a boolean if worker is finished with the job
 	"""
-	return (item_progress >= item_goal)
+	return (fix_progress >= fix_goal if broken else item_progress >= item_goal)
 	
 func chanceToBreakMachine():
 	"""

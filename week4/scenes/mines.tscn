@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://assets/Background Sprites/Sprites/8-Tile-Sets/Tile-Sets (64-64).png" type="Texture" id=1]
 [ext_resource path="res://assets/Background Sprites/Sprites/7-Objects/2-Door/1-Closed/1.png" type="Texture" id=2]
@@ -29,19 +29,10 @@
 [ext_resource path="res://assets/money and gems - cropped/tile012.png" type="Texture" id=27]
 [ext_resource path="res://assets/money and gems - cropped/tile013.png" type="Texture" id=28]
 [ext_resource path="res://assets/money and gems - cropped/tile006.png" type="Texture" id=29]
-[ext_resource path="res://scenes/shop_screen.tscn" type="PackedScene" id=30]
+[ext_resource path="res://scripts/mines.gd" type="Script" id=30]
 [ext_resource path="res://assets/progress bar/building bar/Background Bar.png" type="Texture" id=31]
 [ext_resource path="res://assets/progress bar/building bar/Foreground.png" type="Texture" id=32]
 [ext_resource path="res://assets/progress bar/building bar/Background Static.png" type="Texture" id=33]
-
-[sub_resource type="GDScript" id=3]
-script/source = "extends Node2D
-
-export var shop : PackedScene
-
-func _on_ShopButton_button_up():
-	get_tree().change_scene(shop.resource_path)
-"
 
 [sub_resource type="TileSet" id=7]
 0/name = "Tile-Sets (64-64).png 0"
@@ -282,8 +273,7 @@ func _on_ShopButton_button_up():
 1/z_index = 0
 
 [node name="Node2D" type="Node2D"]
-script = SubResource( 3 )
-shop = ExtResource( 30 )
+script = ExtResource( 30 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 7 )
@@ -321,19 +311,19 @@ margin_right = 8.0
 margin_bottom = 14.0
 text = "0"
 
-[node name="emerald stats" type="Label" parent="currencies ui/currency stats"]
+[node name="emeraldstats" type="Label" parent="currencies ui/currency stats"]
 margin_top = 18.0
 margin_right = 8.0
 margin_bottom = 32.0
 text = "0"
 
-[node name="ruby stats" type="Label" parent="currencies ui/currency stats"]
+[node name="rubystats" type="Label" parent="currencies ui/currency stats"]
 margin_top = 36.0
 margin_right = 8.0
 margin_bottom = 50.0
 text = "0"
 
-[node name="diamond stats" type="Label" parent="currencies ui/currency stats"]
+[node name="diamondstats" type="Label" parent="currencies ui/currency stats"]
 margin_top = 54.0
 margin_right = 8.0
 margin_bottom = 68.0
@@ -509,6 +499,18 @@ SHOP"
 align = 1
 valign = 1
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [node name="EmeraldProgress" type="TextureProgress" parent="."]
 margin_left = 156.0
 margin_top = 422.0
@@ -593,3 +595,6 @@ texture = ExtResource( 11 )
 offset = Vector2( 268, 291 )
 
 [connection signal="button_up" from="ShopButton" to="." method="_on_ShopButton_button_up"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]
