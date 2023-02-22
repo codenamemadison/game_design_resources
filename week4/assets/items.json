@@ -1,0 +1,38 @@
+{
+	"HELMET": {
+		"name": "Helmet Armor",
+		"spritePath": "res://assets/fantasy icons - cropped/tile113.png",
+		"paymentType": "EMERALD",
+		"costToBuild": "10"
+	},
+	"CLOAK": {
+		"name": "Magic Cloak",
+		"spritePath": "res://assets/fantasy icons - cropped/tile126.png",
+		"paymentType": "RUBY",
+		"costToBuild": "10"
+	},
+	"POTION": {
+		"name": "Mystery Potion",
+		"spritePath": "res://assets/fantasy icons - cropped/tile146.png",
+		"paymentType": "DIAMOND",
+		"costToBuild": "5"
+	},
+	"CROSSBOW": {
+		"name": "Wooden Crossbow",
+		"spritePath": "res://assets/fantasy icons - cropped/tile100.png",
+		"paymentType": "EMERALD",
+		"costToBuild": "20"
+	},
+	"CHEST": {
+		"name": "Chest Armor",
+		"spritePath": "res://assets/fantasy icons - cropped/tile119.png",
+		"paymentType": "EMERALD",
+		"costToBuild": "20"
+	},
+	"SWORD": {
+		"name": "Wood Crossbow",
+		"spritePath": "res://assets/fantasy icons - cropped/tile081.png",
+		"paymentType": "EMERALD",
+		"costToBuild": "20"
+	}
+}
