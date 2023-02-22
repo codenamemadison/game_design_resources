@@ -10,7 +10,7 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Sprite",
-"class": "Machine",
+"class": "Machinee",
 "language": "GDScript",
 "path": "res://scripts/machine.gd"
 }, {
@@ -20,7 +20,7 @@ _global_script_classes=[ {
 "path": "res://scripts/market.gd"
 } ]
 _global_script_class_icons={
-"Machine": "",
+"Machinee": "",
 "Market": ""
 }
 

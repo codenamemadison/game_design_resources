@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://assets/progress_bar_background.png" type="Texture" id=1]
 [ext_resource path="res://assets/Background Sprites/Sprites/7-Objects/2-Door/1-Closed/1.png" type="Texture" id=2]
@@ -30,6 +30,15 @@
 [ext_resource path="res://assets/progress bar/building bar/Foreground.png" type="Texture" id=28]
 [ext_resource path="res://assets/fantasy icons - cropped/tile053.png" type="Texture" id=29]
 [ext_resource path="res://assets/progress bar/building bar/Background Bar.png" type="Texture" id=30]
+[ext_resource path="res://scenes/machine1.gd" type="Script" id=31]
+[ext_resource path="res://assets/exit_icon.png" type="Texture" id=32]
+[ext_resource path="res://scenes/machine2.gd" type="Script" id=33]
+[ext_resource path="res://scenes/exit.gd" type="Script" id=34]
+[ext_resource path="res://scenes/machine3.gd" type="Script" id=35]
+[ext_resource path="res://scenes/machine5.gd" type="Script" id=36]
+[ext_resource path="res://scenes/machine6.gd" type="Script" id=37]
+[ext_resource path="res://scenes/machine4.gd" type="Script" id=38]
+[ext_resource path="res://scenes/machines_overview.gd" type="Script" id=39]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Tile-Sets (64-64).png 0"
@@ -250,9 +259,10 @@
 
 [sub_resource type="Theme" id=3]
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( 193, 888 )
 scale = Vector2( 6.75, 6.21875 )
 texture = ExtResource( 6 )
@@ -395,6 +405,7 @@ texture = ExtResource( 14 )
 [node name="machines" type="VBoxContainer" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+script = ExtResource( 39 )
 
 [node name="top row" type="HBoxContainer" parent="machines"]
 margin_right = 40.0
@@ -403,6 +414,7 @@ margin_right = 40.0
 position = Vector2( 191, 304.5 )
 scale = Vector2( 13, 13 )
 texture = ExtResource( 16 )
+script = ExtResource( 31 )
 
 [node name="inventory1" type="Sprite" parent="machines/top row/machine1"]
 position = Vector2( -6.73076, -4.47957 )
@@ -470,6 +482,7 @@ tint_progress = Color( 0, 1, 0.0235294, 1 )
 position = Vector2( 403, 302.5 )
 scale = Vector2( 13, 13 )
 texture = ExtResource( 16 )
+script = ExtResource( 33 )
 
 [node name="inventory2" type="Sprite" parent="machines/top row/machine2"]
 position = Vector2( -6.73076, -4.47957 )
@@ -537,6 +550,7 @@ tint_progress = Color( 0, 1, 0.0235294, 1 )
 position = Vector2( 614, 304.5 )
 scale = Vector2( 13, 13 )
 texture = ExtResource( 16 )
+script = ExtResource( 35 )
 
 [node name="inventory3" type="Sprite" parent="machines/top row/machine3"]
 position = Vector2( -6.73076, -4.47957 )
@@ -609,6 +623,7 @@ margin_bottom = 4.0
 position = Vector2( 190, 431.5 )
 scale = Vector2( 13, 13 )
 texture = ExtResource( 16 )
+script = ExtResource( 38 )
 
 [node name="inventory4" type="Sprite" parent="machines/bottom row/machine4"]
 position = Vector2( -6.73076, -4.47957 )
@@ -676,6 +691,7 @@ tint_progress = Color( 0, 1, 0.0235294, 1 )
 position = Vector2( 402, 429.5 )
 scale = Vector2( 13, 13 )
 texture = ExtResource( 16 )
+script = ExtResource( 36 )
 
 [node name="inventory5" type="Sprite" parent="machines/bottom row/machine5"]
 position = Vector2( -6.73076, -4.47957 )
@@ -743,6 +759,7 @@ tint_progress = Color( 0, 1, 0.0235294, 1 )
 position = Vector2( 613, 431.5 )
 scale = Vector2( 13, 13 )
 texture = ExtResource( 16 )
+script = ExtResource( 37 )
 
 [node name="inventory6" type="Sprite" parent="machines/bottom row/machine6"]
 position = Vector2( -6.73076, -4.47957 )
@@ -806,45 +823,57 @@ texture_over = ExtResource( 28 )
 texture_progress = ExtResource( 30 )
 tint_progress = Color( 0, 1, 0.0235294, 1 )
 
-[node name="helmet build up" type="PopupPanel" parent="."]
-anchor_right = 0.445
-margin_left = 316.0
-margin_top = 274.0
-margin_right = 730.0
-margin_bottom = 452.0
+[node name="build pop up" type="PopupPanel" parent="."]
+visible = true
+margin_left = 317.0
+margin_top = 282.0
+margin_right = 710.0
+margin_bottom = 466.0
 
-[node name="Sprite" type="Sprite" parent="helmet build up"]
-position = Vector2( 204, 57 )
+[node name="exit" type="Sprite" parent="build pop up"]
+visible = false
+position = Vector2( 370.291, 21.5 )
+scale = Vector2( 0.0563063, 0.0563063 )
+texture = ExtResource( 32 )
+script = ExtResource( 34 )
+
+[node name="pop up content" type="VBoxContainer" parent="build pop up"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="item name" type="Label" parent="build pop up/pop up content"]
+margin_right = 157.0
+margin_bottom = 14.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "item name appears here"
+align = 1
+
+[node name="item sprite" type="Sprite" parent="build pop up/pop up content"]
+position = Vector2( 195, 75 )
 scale = Vector2( 2.84375, 2.84375 )
 texture = ExtResource( 18 )
 
-[node name="pop up text" type="VBoxContainer" parent="helmet build up"]
-margin_left = 122.0
-margin_top = 104.0
-margin_right = 287.0
-margin_bottom = 148.0
+[node name="pop up text" type="VBoxContainer" parent="build pop up/pop up content"]
+margin_top = 18.0
+margin_right = 85.0
+margin_bottom = 62.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme = SubResource( 3 )
 custom_constants/separation = 10
 
-[node name="Build" type="Button" parent="helmet build up/pop up text"]
-margin_right = 165.0
-margin_bottom = 20.0
-text = "Build item?"
+[node name="cost text" type="HBoxContainer" parent="build pop up/pop up content/pop up text"]
+margin_right = 85.0
+margin_bottom = 14.0
+alignment = 1
 
-[node name="cost text" type="HBoxContainer" parent="helmet build up/pop up text"]
-margin_left = 60.0
-margin_top = 30.0
-margin_right = 104.0
-margin_bottom = 44.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="cost_label" type="Label" parent="helmet build up/pop up text/cost text"]
+[node name="cost label" type="Label" parent="build pop up/pop up content/pop up text/cost text"]
 margin_right = 32.0
 margin_bottom = 14.0
 text = "Cost:"
 
-[node name="cost_num" type="Label" parent="helmet build up/pop up text/cost text"]
+[node name="cost num" type="Label" parent="build pop up/pop up content/pop up text/cost text"]
 margin_left = 36.0
 margin_right = 44.0
 margin_bottom = 14.0
@@ -853,9 +882,18 @@ size_flags_vertical = 2
 size_flags_stretch_ratio = 0.77
 text = "0"
 
-[node name="Sprite" type="Sprite" parent="helmet build up/pop up text/cost text"]
-position = Vector2( 64, 7 )
-texture = ExtResource( 11 )
+[node name="cost type" type="Sprite" parent="build pop up/pop up content/pop up text/cost text"]
+position = Vector2( 61, 5.88 )
+scale = Vector2( 1.75, 1.75 )
+texture = ExtResource( 12 )
+
+[node name="Build" type="Button" parent="build pop up/pop up content/pop up text"]
+margin_top = 24.0
+margin_right = 85.0
+margin_bottom = 44.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Build item?"
 
 [node name="welcome speech bubble" type="Sprite" parent="."]
 position = Vector2( 824, 336 )
@@ -880,3 +918,6 @@ valign = 1
 position = Vector2( 904, 316 )
 scale = Vector2( -9.94248, 9.94248 )
 texture = ExtResource( 25 )
+
+[connection signal="popup_hide" from="build pop up" to="machines" method="_on_build_pop_up_popup_hide"]
+[connection signal="pressed" from="build pop up/pop up content/pop up text/Build" to="machines" method="_on_Build_pressed"]

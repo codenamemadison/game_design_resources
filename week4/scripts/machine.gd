@@ -1,8 +1,13 @@
-class_name Machine extends Sprite
+class_name Machinee extends Sprite
 
 # Level of the machine
 var level = 1
 var upgradeCost = 100
+
+# user input
+var building = false
+var upgrading = false
+var fixing = false
 
 # When machine is not broken
 var item_progress = 0
@@ -114,3 +119,4 @@ func upgrade():
 
 
 
+	
