@@ -20,7 +20,7 @@ _global_script_classes=[ {
 "path": "res://scripts/inventory.gd"
 }, {
 "base": "Sprite",
-"class": "Machinee",
+"class": "Machine",
 "language": "GDScript",
 "path": "res://scripts/machine.gd"
 }, {
@@ -32,7 +32,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Customer": "",
 "InventoryManager": "",
-"Machinee": "",
+"Machine": "",
 "Market": ""
 }
 
