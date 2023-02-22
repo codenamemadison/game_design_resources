@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://assets/progress_bar_background.png" type="Texture" id=1]
 [ext_resource path="res://assets/Background Sprites/Sprites/7-Objects/2-Door/1-Closed/1.png" type="Texture" id=2]
@@ -26,10 +26,10 @@
 [ext_resource path="res://assets/machine status icons/machine_building.png" type="Texture" id=24]
 [ext_resource path="res://assets/Phrawgs/player frog.png" type="Texture" id=25]
 [ext_resource path="res://assets/tile003_blank_speech_bubble.png" type="Texture" id=26]
-[ext_resource path="res://assets/progress bar/Background Static.png" type="Texture" id=27]
-[ext_resource path="res://assets/progress bar/Background Bar.png" type="Texture" id=28]
+[ext_resource path="res://assets/progress bar/building bar/Background Static.png" type="Texture" id=27]
+[ext_resource path="res://assets/progress bar/building bar/Foreground.png" type="Texture" id=28]
 [ext_resource path="res://assets/fantasy icons - cropped/tile053.png" type="Texture" id=29]
-[ext_resource path="res://assets/progress bar/Foreground.png" type="Texture" id=30]
+[ext_resource path="res://assets/progress bar/building bar/Background Bar.png" type="Texture" id=30]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Tile-Sets (64-64).png 0"
@@ -248,6 +248,8 @@
 1/shapes = [  ]
 1/z_index = 0
 
+[sub_resource type="Theme" id=3]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -304,7 +306,7 @@ text = "Repair"
 icon = ExtResource( 8 )
 align = 0
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="shop" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
@@ -313,7 +315,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="TileMap2" type="TileMap" parent="."]
+[node name="door" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 cell_size = Vector2( 32, 32 )
 format = 1
@@ -460,8 +462,8 @@ margin_bottom = 73.0385
 rect_scale = Vector2( 0.023, 0.03 )
 value = 80.0
 texture_under = ExtResource( 27 )
-texture_over = ExtResource( 30 )
-texture_progress = ExtResource( 28 )
+texture_over = ExtResource( 28 )
+texture_progress = ExtResource( 30 )
 tint_progress = Color( 0, 1, 0.0235294, 1 )
 
 [node name="machine2" type="Sprite" parent="machines/top row"]
@@ -527,8 +529,8 @@ margin_bottom = 72.8846
 rect_scale = Vector2( 0.023, 0.03 )
 value = 80.0
 texture_under = ExtResource( 27 )
-texture_over = ExtResource( 30 )
-texture_progress = ExtResource( 28 )
+texture_over = ExtResource( 28 )
+texture_progress = ExtResource( 30 )
 tint_progress = Color( 0, 1, 0.0235294, 1 )
 
 [node name="machine3" type="Sprite" parent="machines/top row"]
@@ -594,8 +596,8 @@ margin_bottom = 73.0385
 rect_scale = Vector2( 0.023, 0.03 )
 value = 80.0
 texture_under = ExtResource( 27 )
-texture_over = ExtResource( 30 )
-texture_progress = ExtResource( 28 )
+texture_over = ExtResource( 28 )
+texture_progress = ExtResource( 30 )
 tint_progress = Color( 0, 1, 0.0235294, 1 )
 
 [node name="bottom row" type="HBoxContainer" parent="machines"]
@@ -666,8 +668,8 @@ margin_bottom = 72.7308
 rect_scale = Vector2( 0.023, 0.03 )
 value = 80.0
 texture_under = ExtResource( 27 )
-texture_over = ExtResource( 30 )
-texture_progress = ExtResource( 28 )
+texture_over = ExtResource( 28 )
+texture_progress = ExtResource( 30 )
 tint_progress = Color( 0, 1, 0.0235294, 1 )
 
 [node name="machine5" type="Sprite" parent="machines/bottom row"]
@@ -733,8 +735,8 @@ margin_bottom = 72.8846
 rect_scale = Vector2( 0.023, 0.03 )
 value = 80.0
 texture_under = ExtResource( 27 )
-texture_over = ExtResource( 30 )
-texture_progress = ExtResource( 28 )
+texture_over = ExtResource( 28 )
+texture_progress = ExtResource( 30 )
 tint_progress = Color( 0, 1, 0.0235294, 1 )
 
 [node name="machine6" type="Sprite" parent="machines/bottom row"]
@@ -800,9 +802,60 @@ margin_bottom = 73.423
 rect_scale = Vector2( 0.023, 0.03 )
 value = 80.0
 texture_under = ExtResource( 27 )
-texture_over = ExtResource( 30 )
-texture_progress = ExtResource( 28 )
+texture_over = ExtResource( 28 )
+texture_progress = ExtResource( 30 )
 tint_progress = Color( 0, 1, 0.0235294, 1 )
+
+[node name="helmet build up" type="PopupPanel" parent="."]
+anchor_right = 0.445
+margin_left = 316.0
+margin_top = 274.0
+margin_right = 730.0
+margin_bottom = 452.0
+
+[node name="Sprite" type="Sprite" parent="helmet build up"]
+position = Vector2( 204, 57 )
+scale = Vector2( 2.84375, 2.84375 )
+texture = ExtResource( 18 )
+
+[node name="pop up text" type="VBoxContainer" parent="helmet build up"]
+margin_left = 122.0
+margin_top = 104.0
+margin_right = 287.0
+margin_bottom = 148.0
+theme = SubResource( 3 )
+custom_constants/separation = 10
+
+[node name="Build" type="Button" parent="helmet build up/pop up text"]
+margin_right = 165.0
+margin_bottom = 20.0
+text = "Build item?"
+
+[node name="cost text" type="HBoxContainer" parent="helmet build up/pop up text"]
+margin_left = 60.0
+margin_top = 30.0
+margin_right = 104.0
+margin_bottom = 44.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="cost_label" type="Label" parent="helmet build up/pop up text/cost text"]
+margin_right = 32.0
+margin_bottom = 14.0
+text = "Cost:"
+
+[node name="cost_num" type="Label" parent="helmet build up/pop up text/cost text"]
+margin_left = 36.0
+margin_right = 44.0
+margin_bottom = 14.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.77
+text = "0"
+
+[node name="Sprite" type="Sprite" parent="helmet build up/pop up text/cost text"]
+position = Vector2( 64, 7 )
+texture = ExtResource( 11 )
 
 [node name="welcome speech bubble" type="Sprite" parent="."]
 position = Vector2( 824, 336 )
