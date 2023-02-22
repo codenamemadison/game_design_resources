@@ -151,7 +151,7 @@ func upgrade():
 				global.BALANCE -= upgradeCost
 				 
 func _input(event):
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and get_node("/root/Main/machines/").BUILD_POP_UP_OPEN == false:
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and get_node("/root/Main/machines/").BUILD_POP_UP_OPEN == false and get_node("/root/Main/machines/").UPGRADE_POP_UP_OPEN == false:
 		if get_rect().has_point(get_local_mouse_position()):
 			if event.pressed:
 				print("A click!")

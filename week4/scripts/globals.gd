@@ -32,6 +32,9 @@ var STORE
 
 # Upgrade Machine Rates
 var level1rate =  20
+var level12upgradecost = 50
 var level2rate = 12
+var level23upgradecost = 100
 var level3rate = 7
+var level34upgradecost = 150
 var level4rate = 2

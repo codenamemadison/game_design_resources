@@ -1,6 +1,6 @@
 extends VBoxContainer
 var BUILD_POP_UP_OPEN = false
-
+var UPGRADE_POP_UP_OPEN = false
 
 
 
@@ -17,6 +17,7 @@ func _ready():
 
 func _on_build_pop_up_popup_hide():
 	BUILD_POP_UP_OPEN = false
+	UPGRADE_POP_UP_OPEN = false
 
 
 func _on_Build_pressed():
