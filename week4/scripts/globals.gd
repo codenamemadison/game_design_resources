@@ -29,3 +29,9 @@ var NUM_OF_POTIONS
 
 # Market Storage
 var STORE
+
+# Upgrade Machine Rates
+var level1rate =  20
+var level2rate = 12
+var level3rate = 7
+var level4rate = 2

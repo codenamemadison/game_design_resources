@@ -32,10 +32,13 @@ var duration_to_complete_fixing = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$"fix1".visible = false
+	get_node("/root/Main/machines/top row/fix1/").visible = false
 	$"machine status1".texture = null
 	$"inventory1/inv num1".text = "0"
 	$ProgressBar1.value = 0
+	level = 1
+	
+
 	pass # Replace with function body.
 
 
@@ -43,13 +46,31 @@ func _ready():
 func _process(delta):
 	if machine_process == "build":
 		workOnJob(delta)
+	updateLevelStats(delta)
 	#workOnJob(delta)
 	#chanceToBreakMachine()
 	#updateDurations()
 	
 
 
-
+func updateLevelStats(delta):
+	"""
+	Args:
+		delta (float): The elapsed time since the previous frame, roughly 0.1667 seconds
+	
+	Every second, the machine level is checked and the item_progress and item_rate stats are updated
+	accordingly.
+	"""
+	if level == 1:
+		item_rate = global.level1rate
+	elif level == 2:
+		item_rate = global.level2rate
+	elif level == 3:
+		item_rate = global.level3rate
+	elif level == 4:
+		item_rate = global.level4rate
+		
+		
 
 
 
@@ -140,6 +161,7 @@ func _input(event):
 				get_node("/root/Main/build pop up/pop up content/item sprite/").texture = load("res://assets/fantasy icons - cropped/tile113.png")
 				get_node("/root/Main/build pop up/pop up content/pop up text/cost text/cost num/").set_text(str(itemCost))
 				get_node("/root/Main/build pop up/pop up content/pop up text/cost text/cost type/").texture = load("res://assets/money and gems - cropped/tile000.png")
+				get_node("/root/Main/build pop up/pop up content/pop up text/level/").set_text("Machine Level "+str(level))
 			else:
 				print('else')
 
