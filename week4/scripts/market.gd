@@ -1,6 +1,8 @@
 # Naming class
 class_name Market extends Node
 
+var inventory = load("res://scripts/inventory.gd").new()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	initVars()
@@ -19,28 +21,28 @@ func loadJsonFile():
 	"""
 	Populates the store with items from JSON file
 	"""
-	
+	print("Hello")
 	var file = File.new()
-	file.open("res://assets/prices.json", file.READ)
+	file.open("res://assets/items.json", file.READ)
 	global.STORE = parse_json(file.get_as_text())
 	file.close()
 	
+func deposit(currency, amount):
+	match currency:
+		"COINS":
+			global.COINS += amount
+		"EMERALD": 
+			global.EMERALDS += amount
+		"RUBY":
+			global.RUBY += amount
+		"DIAMOND":
+			global.DIAMONDS += amount
+			
+func giveItem(item_id, currency, amount):
+	print(currency)
+	inventory.removeItem(item_id)
+	deposit(currency, amount)
 
-#func purchaseItem(item_id):
-#	"""
-#	Customer buys an item from the store
-#	"""
-#
-#	match item_id:
-#		"CHEST":
-#			global.NUM_OF_CHEST += 1
-#		"HELMET":
-#			global.NUM_OF_HELMET += 1
-#		"CLOAK":
-#			global.NUM_OF_CLOAKS += 1
-#		"SWORD":
-#			global.NUM_OF_SWORDS += 1
-#		"CROSSBOW":
-#			global.NUM_OF_CROSSBOWS += 1
-#		"POTION":
-#			global.NUM_OF_POTIONS += 1
+
+	
+	

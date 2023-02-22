@@ -3,36 +3,42 @@
 		"name": "Helmet Armor",
 		"spritePath": "res://assets/fantasy icons - cropped/tile113.png",
 		"paymentType": "EMERALD",
+		"paymentPath": "res://assets/money and gems - cropped/tile000.png",
 		"costToBuild": "10"
 	},
 	"CLOAK": {
 		"name": "Magic Cloak",
 		"spritePath": "res://assets/fantasy icons - cropped/tile126.png",
 		"paymentType": "RUBY",
+		"paymentPath": "res://assets/money and gems - cropped/tile001.png",
 		"costToBuild": "10"
 	},
 	"POTION": {
 		"name": "Mystery Potion",
 		"spritePath": "res://assets/fantasy icons - cropped/tile146.png",
 		"paymentType": "DIAMOND",
+		"paymentPath": "res://assets/money and gems - cropped/tile004.png",
 		"costToBuild": "5"
 	},
 	"CROSSBOW": {
 		"name": "Wooden Crossbow",
 		"spritePath": "res://assets/fantasy icons - cropped/tile100.png",
 		"paymentType": "EMERALD",
+		"paymentPath": "res://assets/money and gems - cropped/tile000.png",
 		"costToBuild": "20"
 	},
 	"CHEST": {
 		"name": "Chest Armor",
 		"spritePath": "res://assets/fantasy icons - cropped/tile119.png",
 		"paymentType": "EMERALD",
+		"paymentPath": "res://assets/money and gems - cropped/tile000.png",
 		"costToBuild": "20"
 	},
 	"SWORD": {
 		"name": "Wood Crossbow",
 		"spritePath": "res://assets/fantasy icons - cropped/tile081.png",
 		"paymentType": "EMERALD",
+		"paymentPath": "res://assets/money and gems - cropped/tile000.png",
 		"costToBuild": "20"
 	}
 }

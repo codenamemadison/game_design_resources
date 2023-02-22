@@ -1,9 +1,10 @@
 class_name InventoryManager extends Node
 
-var market = load("res://scripts/market.gd").new()
+var market 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	market = load("res://scripts/market.gd").new()
 	initVars()
 
 # Called every frame
@@ -30,9 +31,13 @@ func updateCurrencyUI():
 	var currency = [global.COINS, global.EMERALDS, global.RUBY, global.DIAMONDS]
 	
 	# Gets children under currency stats
-	var children = get_children()[0].get_children()
-	for i in children.size():
-		children[i].text = str(currency[i])
+	var children = get_node("../currencies/currency stats").get_children()
+	get_node("../currencies/currency stats/coin stats").text = str(currency[0])
+	get_node("../currencies/currency stats/emerald stats").text = str(currency[1])
+	get_node("../currencies/currency stats/ruby stats").text = str(currency[2])
+	get_node("../currencies/currency stats/diamond stats").text = str(currency[3])
+#	for i in children.size():
+#		children[i].text = str(currency[i])
 		
 func updateMachineUI():
 	"""
